@@ -12,24 +12,6 @@ from VGG import *
 # 定义标签到文本的映射字典
 # 检查是否有可用的GPU
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-labels=[0,1,2,3,4,5,6,7,8,9]
-label_to_text = {
-    0: "The photo of a Basophil",
-    1: "The photo of a Erythroblast",
-    2: "The photo of a Eosinophil",
-    3: "The photo of a typical Lymphocyte",
-    4: "The photo of a Monocyte",
-    5: "The photo of a Myelocyte",
-    6: "The photo of a Myeloblast",
-    7: "The photo of a band neutrophil",
-    8: "The photo of a segmented neutrophil",
-    9: "The photo of a Promyelocyte"
-}
-trans={"NGS":"segmented neutrophil","NGB":"band neutrophil","LYT":"typical Lymphocyte",
-      "LYA":"atypical Lymphocyte","MON":"Monocyte","EOS":"Eosinophil","BAS":"Basophil",
-       "MYO":"Myeloblast","PMO":"Promyelocyte","PMB":"bilobed Promyelocyte","MYB":"Myelocyte",
-       "MMZ":"Metamyelocyte","MOB":"Monoblast","EBO":"Erythroblast","KSC":"Smudge cell"
-      }
 modelTex, preprocess = clip.load("ViT-B-32.pt", device=device)
 modelTex = modelTex.eval()
 # 定义多模态数据集类

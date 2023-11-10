@@ -84,7 +84,7 @@ for epoch in range(num_epochs):
     for i, (images, labels) in enumerate(multimodal_loader):
         images = images.to(device)
         labels = labels.to(device)
-        print("fuckiong",len(labels))
+        #print("fuckiong",len(labels))
         #with torch.no_grad():
             #text_inputs = torch.tensor(list(labels))
             #text_features = modelTex.encode_text(text_inputs)
